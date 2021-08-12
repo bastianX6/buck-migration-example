@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_ItunesSimpleSearch_ItunesSimpleSearchUITests : NSObject
+@end
+@implementation PodsDummy_Pods_ItunesSimpleSearch_ItunesSimpleSearchUITests
+@end

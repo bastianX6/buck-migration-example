@@ -1,0 +1,19 @@
+platform :ios, '13.0'
+
+target 'ItunesSimpleSearch' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for ItunesSimpleSearch
+  pod 'SDWebImageSwiftUI'
+
+  target 'ItunesSimpleSearchTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'ItunesSimpleSearchUITests' do
+    # Pods for testing
+  end
+
+end
