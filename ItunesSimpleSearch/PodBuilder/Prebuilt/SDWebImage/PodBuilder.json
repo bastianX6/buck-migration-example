@@ -1,0 +1,11 @@
+{
+  "entry": "pod 'SDWebImage', '=5.11.1'",
+  "is_prebuilt": false,
+  "specs": [
+    "SDWebImage",
+    "SDWebImage/Core"
+  ],
+  "is_static": false,
+  "original_compile_path": "/private/tmp/pod_builder",
+  "build_folder_hash": "b221c3593f64779f813fde1072092e97dccc30cd"
+}

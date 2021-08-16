@@ -3,20 +3,22 @@ PODS:
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
   - SDWebImageSwiftUI (2.0.2):
-    - SDWebImage (~> 5.10)
+    - SDWebImage
 
 DEPENDENCIES:
-  - SDWebImageSwiftUI
+  - SDWebImage (from `PodBuilder/Prebuilt/SDWebImage`)
+  - SDWebImageSwiftUI (from `PodBuilder/Prebuilt/SDWebImageSwiftUI`)
 
-SPEC REPOS:
-  trunk:
-    - SDWebImage
-    - SDWebImageSwiftUI
+EXTERNAL SOURCES:
+  SDWebImage:
+    :path: PodBuilder/Prebuilt/SDWebImage
+  SDWebImageSwiftUI:
+    :path: PodBuilder/Prebuilt/SDWebImageSwiftUI
 
 SPEC CHECKSUMS:
-  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
-  SDWebImageSwiftUI: 8a3923c95108312b03a599ec1498754af55a6819
+  SDWebImage: 938163ad14a2efe0ff093f2265198cf69f3290de
+  SDWebImageSwiftUI: 207bcd233efba321da765ab0db15f1dcd59ce60c
 
-PODFILE CHECKSUM: 5683b0c74fc2302b183e0119c9906de895099b35
+PODFILE CHECKSUM: 4c26266c680797ed8ea7072fdfbb835d29b748c9
 
 COCOAPODS: 1.10.2

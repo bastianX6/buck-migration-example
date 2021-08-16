@@ -1,0 +1,36 @@
+[cache]
+  mode = dir
+
+[cxx]
+  default_platform = iphonesimulator-x86_64
+  cflags = -g -fmodules -fobjc-arc -D BUCK
+  cxxflags = -fobjc-arc -std=c++14 -D DEBUG
+  combined_preprocess_and_compile = true
+  pch_enabled = false
+  ldflags = -Xlinker -objc_abi_version -Xlinker 2 -fobjc-arc -fobjc-link-runtime
+
+[apple]
+  use_swift_delegate = true
+  use_header_maps_in_xcode = false
+  generate_missing_umbrella_headers = true
+  iphonesimulator_target_sdk_version = 14.0
+  iphoneos_target_sdk_version = 14.0
+  provisioning_profile_read_command = security cms -Di
+  xctool_default_destination_specifier = platform=iOS Simulator,OS=latest
+  xctool_path = tools/xctool/bin/xctool
+
+[alias]
+demo_app_ios = //ItunesSimpleSearch:ItunesSimpleSearch
+sdwebimage = //ItunesSimpleSearch/Pods:SDWebImage
+
+[build]
+  threads = 4
+
+[custom]
+  config = debug
+  optimization = -Onone
+  config_swift_compiler_flags = -DDEBUG -enable-testing -g
+  code_coverage_cflags = -fprofile-instr-generate -fcoverage-mapping
+  code_coverage_cxxflags = -fprofile-instr-generate -fcoverage-mapping
+  code_coverage_ldflags = -fprofile-instr-generate
+  code_coverage_swift_compiler_flags = -profile-generate -profile-coverage-mapping

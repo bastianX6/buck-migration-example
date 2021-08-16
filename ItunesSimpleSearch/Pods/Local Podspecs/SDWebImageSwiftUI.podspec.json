@@ -1,0 +1,22 @@
+{
+  "name": "SDWebImageSwiftUI",
+  "version": "2.0.2",
+  "summary": "SwiftUI Image loading and Animation framework powered by SDWebImage",
+  "homepage": "https://github.com/SDWebImage/SDWebImageSwiftUI",
+  "authors": "PodBuilder",
+  "source": {
+    "git": "https://github.com/SDWebImage/SDWebImageSwiftUI.git"
+  },
+  "license": {
+    "type": "MIT"
+  },
+  "platforms": {
+    "ios": "13.0"
+  },
+  "vendored_frameworks": "SDWebImageSwiftUI.xcframework",
+  "dependencies": {
+    "SDWebImage": [
+
+    ]
+  }
+}

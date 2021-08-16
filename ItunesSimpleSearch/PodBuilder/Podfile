@@ -1,0 +1,24 @@
+platform :ios, '13.0'
+use_frameworks!
+
+target 'ItunesSimpleSearch' do
+  # Comment the next line if you don't want to use dynamic frameworks
+
+  # Pods for ItunesSimpleSearch
+  pod 'SDWebImageSwiftUI'
+
+  target 'ItunesSimpleSearchTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'ItunesSimpleSearchUITests' do
+    # Pods for testing
+  end
+
+end
+
+
+pre_install do |installer|
+  raise "\n🚨  Do not launch 'pod install' manually, use `pod_builder` instead!\n" if !File.exist?('pod_builder.lock')
+end

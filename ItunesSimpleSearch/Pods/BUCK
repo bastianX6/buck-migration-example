@@ -1,0 +1,51 @@
+apple_library(
+  name = 'SDWebImage',
+  preprocessor_flags = ['-fobjc-arc', '-Wimplicit-function-declaration'],
+  headers = glob([
+    'SDWebImage/SDWebImage/Private/*.h',
+  ]),
+  exported_headers = glob([
+      'SDWebImage/SDWebImage/Core/*.h', 
+      'SDWebImage/WebImage/SDWebImage.h',
+  ]),
+  srcs = glob([
+    'SDWebImage/**/*.m',
+    'SDWebImage/WebImage/**/*.m',
+  ]),
+  frameworks = [
+    '$SDKROOT/System/Library/Frameworks/UIKit.framework',
+    '$SDKROOT/System/Library/Frameworks/Foundation.framework',
+    '$SDKROOT/System/Library/Frameworks/ImageIO.framework',
+  ],
+  visibility = [
+    'PUBLIC',
+  ],
+  link_style = 'shared',
+  preferred_linkage = 'shared'
+)
+
+apple_library(
+  name = 'SDWebImageSwiftUI',
+  deps = [
+    ':SDWebImage',
+  ],
+  preprocessor_flags = ['-fobjc-arc'],
+  headers = [],
+  exported_headers = glob([
+      'SDWebImageSwiftUI/**/*.h',
+  ]),
+  srcs = glob([
+      'SDWebImageSwiftUI/**/*.swift',
+  ]),
+  frameworks = [
+    '$SDKROOT/System/Library/Frameworks/UIKit.framework',
+    '$SDKROOT/System/Library/Frameworks/Foundation.framework',
+    '$SDKROOT/System/Library/Frameworks/SwiftUI.framework',
+    '$SDKROOT/System/Library/Frameworks/Combine.framework',
+  ],
+  visibility = [
+    'PUBLIC',
+  ],
+  link_style = 'shared',
+  preferred_linkage = 'shared'
+)

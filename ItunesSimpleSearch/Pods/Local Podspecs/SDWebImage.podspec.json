@@ -1,0 +1,24 @@
+{
+  "name": "SDWebImage",
+  "version": "5.11.1",
+  "summary": "Asynchronous image downloader with cache support with an UIImageView category.",
+  "homepage": "https://github.com/SDWebImage/SDWebImage",
+  "authors": "PodBuilder",
+  "source": {
+    "git": "https://github.com/SDWebImage/SDWebImage.git"
+  },
+  "license": {
+    "type": "MIT"
+  },
+  "platforms": {
+    "ios": "13.0"
+  },
+  "default_subspecs": "Core",
+  "frameworks": "ImageIO",
+  "subspecs": [
+    {
+      "name": "Core",
+      "vendored_frameworks": "SDWebImage.xcframework"
+    }
+  ]
+}

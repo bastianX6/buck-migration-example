@@ -1,0 +1,64 @@
+# Main app configuration
+apple_resource(
+  name = 'ItunesSimpleSearchResources',
+  files = glob(['ItunesSimpleSearch/Assets.xcassets/**/*.png']),
+  dirs = [],
+)
+
+apple_bundle(
+  name = 'ItunesSimpleSearch',
+  binary = ':ItunesSimpleSearchBinary',
+  extension = 'app',
+  info_plist = 'ItunesSimpleSearch/Info.plist',
+  tests = [':ItunesSimpleSearchTests', ':ItunesSimpleSearchUITests']
+)
+
+apple_binary(
+  name = 'ItunesSimpleSearchBinary',
+  deps = [
+      ':ItunesSimpleSearchResources',
+      ':SDWebImage',
+      ':SDWebImageSwiftUI',
+    ],
+  preprocessor_flags = ['-fobjc-arc', '-Wno-objc-designated-initializers'],
+  headers = glob([
+    '*.h',
+  ]),
+  srcs = glob([
+    'ItunesSimpleSearch/**/*.swift',
+    'ItunesSimpleSearch/*.swift',
+  ]),
+  frameworks = [
+    '$SDKROOT/System/Library/Frameworks/UIKit.framework',
+    '$SDKROOT/System/Library/Frameworks/Foundation.framework',
+    '$SDKROOT/System/Library/Frameworks/SwiftUI.framework',
+    '$SDKROOT/System/Library/Frameworks/ImageIO.framework',
+    '$SDKROOT/System/Library/Frameworks/Combine.framework',
+  ],
+)
+
+apple_package(
+  name = 'ItunesSimpleSearchPackage',
+  bundle = ':ItunesSimpleSearch',
+)
+
+#Libraries
+## Frameworks should be added to the same BUCK file
+
+prebuilt_apple_framework(
+  name = 'SDWebImage',
+  framework = 'PodBuilder/Prebuilt/SDWebImage/SDWebImage.xcframework/ios-arm64_x86_64-simulator/SDWebImage.framework',
+  preferred_linkage = 'shared',
+  visibility = [
+    'PUBLIC',
+  ],
+)
+
+prebuilt_apple_framework(
+  name = 'SDWebImageSwiftUI',
+  framework = 'PodBuilder/Prebuilt/SDWebImageSwiftUI/SDWebImageSwiftUI.xcframework/ios-arm64_x86_64-simulator/SDWebImageSwiftUI.framework',
+  preferred_linkage = 'shared',
+  visibility = [
+    'PUBLIC',
+  ],
+)
